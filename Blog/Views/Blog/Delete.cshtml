@@ -1,0 +1,36 @@
+﻿@model MyBlog
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+          <div class="col-6">
+            <h1>Edit Article</h1>
+          </div>
+          <div class="col-6 text-end mt-2">
+            <a asp-controller="Blog" asp-action="Manage" class="btn btn-success">Return</a>
+            <button type="submit" class="btn btn-danger">Delete Article</button>          
+          </div>
+          <hr />
+        </div>
+        <div class="form-group">
+          <h4>Post Title:</h4>
+          <input class="form-control" id="exampleTextarea" rows="1" asp-for="Title" />
+        </div>
+        <div class="form-group mt-3">
+          <h4>Post Author:</h4>
+          <input class="form-control" id="exampleTextarea" rows="1" asp-for="Author" />
+        </div>
+        <div class="form-group mt-3">
+            <h4>Post Body:</h4>
+          <textarea class="form-control" id="exampleTextarea" rows="15" asp-for="Body"></textarea>
+        </div>
+        <div class="form-group mt-3">
+          <h4>Picture</h4>
+          <input class="form-control" type="file" id="formFile">
+        </div>
+    </div>
+</form>

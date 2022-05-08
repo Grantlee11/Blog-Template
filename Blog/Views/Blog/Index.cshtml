@@ -1,0 +1,29 @@
+﻿@model IEnumerable<MyBlog>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container p-3">
+    <div class="row pt-2">
+        <div class="col-6">
+            <h1>Article Posts</h1>
+        </div>
+        <div class="col-6 text-end mt-3">
+            <a asp-controller="Blog" asp-action="Manage" class="btn btn-success">Manage Articles</a>
+        </div>
+    </div>
+</div>
+
+@foreach(var obj in Model)
+ {
+  <hr />
+  <figure class="text-center">
+    <blockquote class="blockquote">
+      <p class="mb-0">@obj.Title</p>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+      @obj.Author
+    </figcaption>
+    <a type="button" class="btn btn-link" asp-controller="Blog" asp-action="Article" asp-route-id="@obj.Id">Check It Out</a>
+   </figure>
+}
